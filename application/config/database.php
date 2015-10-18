@@ -45,14 +45,22 @@
 | the active record class
 */
 
-$active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = '';
-$db['default']['dbdriver'] = 'mysql';
+switch($_SERVER["SERVER_NAME"]) {
+    case "localhost":
+        $active_group = "default";
+    break;
+    case "www.codeigniter1.embassy-pub.ro":
+        $active_group = "production";
+    break;
+    }
+
+$db['default']['hostname'] = '127.0.0.1';
+$db['default']['username'] = 'root';
+$db['default']['password'] = 'aaaa';
+$db['default']['database'] = 'codeigniter1';
+$db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;
@@ -63,6 +71,22 @@ $db['default']['dbcollat'] = 'utf8_general_ci';
 $db['default']['swap_pre'] = '';
 $db['default']['autoinit'] = TRUE;
 $db['default']['stricton'] = FALSE;
+
+$db['production']['hostname'] = 'localhost';
+$db['production']['username'] = 'remb4372_victor';
+$db['production']['password'] = 'naiart92';
+$db['production']['database'] = 'remb4372_codeigniter1';
+$db['production']['dbdriver'] = 'mysqli';
+$db['production']['dbprefix'] = '';
+$db['production']['pconnect'] = TRUE;
+$db['production']['db_debug'] = FALSE;
+$db['production']['cache_on'] = FALSE;
+$db['production']['cachedir'] = '';
+$db['production']['char_set'] = 'utf8';
+$db['production']['dbcollat'] = 'utf8_general_ci';
+$db['production']['swap_pre'] = '';
+$db['production']['autoinit'] = TRUE;
+$db['production']['stricton'] = FALSE;
 
 
 /* End of file database.php */
