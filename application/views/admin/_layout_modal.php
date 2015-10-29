@@ -3,7 +3,7 @@
 <body style="background: #555;">
 	<div class="modal show" role="dialog">
 		
-<?php $this->load->view($subview); // Subview is set in controller ?>
+		<?php $this->load->view($subview); // Subview is set in controller ?>
 
 		<div class="modal-footer">
 			&copy; <?=date('Y'); ?> <?=$meta_title; ?>

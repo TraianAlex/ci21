@@ -77,7 +77,7 @@ class User_M extends MY_Model{
 		return $user;
 	}
 
-	public function hash ($string){
+	public function hash($string){
 		return hash('sha512', $string . config_item('encryption_key'));
 	}
 }
